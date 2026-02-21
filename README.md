@@ -1,4 +1,5 @@
 # ISE Simulator
+[![DOI](https://zenodo.org/badge/1160733820.svg)](https://doi.org/10.5281/zenodo.18719966)
 
 **Discrete-event simulator for studying Ambiguity-Bearing Outputs (ABOs) Across Interconnected Systems Environment**
 
