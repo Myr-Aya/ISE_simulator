@@ -48,7 +48,7 @@ from typing import List, Dict, Optional, Tuple
 import pandas as pd
 
 # =============================================================================
-# MindXO Color Palette
+# Color Palette
 # =============================================================================
 COLORS = {
     # Core Greens (Authority / Trust)
