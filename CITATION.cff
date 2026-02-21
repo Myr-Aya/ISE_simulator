@@ -10,7 +10,7 @@ repository-code: "https://github.com/Myr-Aya/ISE_simulator"
 doi: "10.5281/zenodo.18719966"
 license: MIT
 version: "0.1"
-date-released: "2026-02-22"
+date-released: "2026-02-21"
 keywords:
   - AI safety
   - systemic risk
