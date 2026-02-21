@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "ISE Simulator: Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment"
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+authors:
+  - given-names: "Myriam"
+    family-names: "Ayada"
+    orcid: "https://orcid.org/0009-0000-4516-6686"
+repository-code: "https://github.com/Myr-Aya/ISE_simulator"
+license: MIT
+version: "0.1"
+date-released: "2026-02-22"
+keywords:
+  - AI safety
+  - systemic risk
+  - ambiguity-bearing outputs
+  - interconnected systems
+  - semantic drift
+  - ISCIL
+abstract: >-
+  Discrete-event simulator for studying how locally valid and 
+  semantically ambiguous AI outputs that propagate through 
+  interconnected systems can induce environment-level drift. 
+  Implements a four-system loan underwriting pipeline with 
+  feedback loops, discretization effects, and an ISCIL containment 
+  layer. Accompanies the paper "Propagation of Ambiguity-Bearing 
+  Outputs Across Interconnected Systems Environment."
+preferred-citation:
+  type: article
+  authors:
+    - given-names: "Myriam"
+      family-names: "Ayada"
+  title: >-
+    Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment
+  year: 2026

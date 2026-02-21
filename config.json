@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "version": "v0.1",
+    "description": "ISE Simulator configuration — validated parameters producing the results reported in the paper",
+    "paper_section": "Section 6 (Simulation Study) and Annex 3 (Technical Details)",
+    "seed": 42
+  },
+
+  "global": {
+    "n_steps": 1200,
+    "n_applicants_per_step": 15,
+    "total_applicants": 18000,
+    "maturation_delay": 90,
+    "pool_seed": 42
+  },
+
+  "applicant_model": {
+    "risk_distribution": "Beta(2.5, 3.5)",
+    "risk_alpha": 2.5,
+    "risk_beta": 3.5,
+    "default_probability": "r^1.8",
+    "default_exponent": 1.8
+  },
+
+  "pipeline": {
+    "v1_ai_risk_assessment": {
+      "noise_std": 0.08,
+      "calibration_window": 50,
+      "calibration_offset_bounds": [-0.5, 0.5],
+      "target_default_rate": 0.15
+    },
+    "v2_categorization": {
+      "low_threshold": 0.38,
+      "high_threshold": 0.62,
+      "categories": ["LOW", "MEDIUM", "HIGH"]
+    },
+    "v3_decision_engine": {
+      "rules": {
+        "LOW": "APPROVE",
+        "HIGH_and_risk_above_0.75": "DENY",
+        "otherwise": "ESCALATE"
+      },
+      "human_reviewer": {
+        "noise_std": 0.05,
+        "approval_threshold": 0.50
+      }
+    },
+    "v4_calibration": {
+      "maturation_delay": 90,
+      "description": "Observes outcomes after τ timesteps and adjusts v1 offset ω"
+    }
+  },
+
+  "feedback_loops": {
+    "v4_outcome_feedback": {
+      "strength": 0.076,
+      "asymmetry_gamma": 0.03,
+      "description": "Permissive correction at 3% of conservative correction strength"
+    },
+    "v3_operational_feedback": {
+      "strength": 0.000110,
+      "proportional_scaling": true,
+      "lookback_window": 20,
+      "scaling_bounds": [0.5, 2.0],
+      "description": "Per-approval permissive pressure, scales with rolling approval rate"
+    }
+  },
+
+  "scenarios": {
+    "baseline": {
+      "name": "Baseline",
+      "delta_enabled": false,
+      "delta_start": 500,
+      "delta_end": 800,
+      "delta_min": 0.0,
+      "delta_max": 0.0,
+      "iscil_enabled": false,
+      "iscil_containment_enabled": false
+    },
+    "abo": {
+      "name": "ABO (no ISCIL)",
+      "delta_enabled": true,
+      "delta_start": 500,
+      "delta_end": 800,
+      "delta_min": -0.15,
+      "delta_max": -0.10,
+      "delta_distribution": "Uniform(-0.15, -0.10)",
+      "delta_mechanism": "multiplicative: s_eff = s_cal × (1 + δ)",
+      "iscil_enabled": false,
+      "iscil_containment_enabled": false
+    },
+    "abo_iscil": {
+      "name": "ABO + ISCIL",
+      "delta_enabled": true,
+      "delta_start": 500,
+      "delta_end": 800,
+      "delta_min": -0.15,
+      "delta_max": -0.10,
+      "delta_distribution": "Uniform(-0.15, -0.10)",
+      "delta_mechanism": "multiplicative: s_eff = s_cal × (1 + δ)",
+      "iscil_enabled": true,
+      "iscil_containment_enabled": true
+    }
+  },
+
+  "iscil": {
+    "baseline_window": 200,
+    "threshold": 1.0,
+    "sustained_window": 5,
+    "roc_window": 15,
+    "smoothing_window": 10,
+    "max_guardrail_offset": 0.05,
+    "max_feedback_damping": 0.50,
+    "crs_weights": {
+      "approval_rate": 0.40,
+      "category_proportions": 0.30,
+      "escalation_rate": 0.20,
+      "feedback_magnitude": 0.10
+    },
+    "telemetry_observation_points": {
+      "approval_rate": "e34",
+      "category_proportions": "e23",
+      "escalation_rate": "e34",
+      "feedback_magnitude": "e41"
+    },
+    "containment_actions": {
+      "discretization_guardrail": {
+        "corridor": "e12",
+        "mechanism": "blind offset: s'_eff = s_eff + g × strength",
+        "max_offset": 0.05
+      },
+      "feedback_damping": {
+        "corridor": "e41",
+        "mechanism": "asymmetric attenuation — self-correcting signals pass, amplifying signals damped",
+        "max_damping_factor": 0.50
+      }
+    },
+    "intervention_strength": "min(sqrt((CRS - θ) / θ), 1.0)"
+  },
+
+  "financial_model": {
+    "revenue_per_good_loan": 3.0,
+    "cost_per_default": 8.0,
+    "opportunity_cost_per_denial": 0.5,
+    "rationale": "Stylized consumer lending where default losses exceed interest revenue by factor of 2-3"
+  },
+
+  "rng_notes": {
+    "main_rng_seed": 42,
+    "delta_rng": "Separate RNG seeded from main — prevents delta draws from desynchronising noise sequences across scenarios",
+    "critical_fix": "v25 introduced separate delta_rng to fix cross-scenario RNG desynchronisation bug"
+  }
+}
