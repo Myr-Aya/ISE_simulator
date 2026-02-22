@@ -2775,7 +2775,7 @@ def export_to_excel(scenarios: Dict[str, Tuple[ScenarioConfig, SimulationResults
         # Sheet 5: All Outcomes (one sheet per scenario, limited to first 10k rows)
         for name, (config, results) in scenarios.items():
             outcomes_data = []
-            for o in results.all_outcomes[:10000]:  # Limit to avoid huge files
+            for o in results.all_outcomes: # Export all outcomes
                 outcomes_data.append({
                     'Timestep': o['timestep'],
                     'Applicant ID': o['applicant_id'],
