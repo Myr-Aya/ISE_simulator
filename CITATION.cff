@@ -7,30 +7,44 @@ authors:
     family-names: "Ayada"
     orcid: "https://orcid.org/0009-0000-4516-6686"
 repository-code: "https://github.com/Myr-Aya/ISE_simulator"
+url: "https://mind-xo.com/research/"
 doi: "10.5281/zenodo.18719966"
 license: MIT
 version: "0.1"
 date-released: "2026-02-21"
 keywords:
-  - AI safety
-  - systemic risk
-  - ambiguity-bearing outputs
-  - interconnected systems
-  - semantic drift
-  - ISCIL
+  - ambiguity-bearing-outputs
+  - interconnected-systems-environment
+  - iscil
+  - ai-safety
+  - ai-governance
+  - ai-risk
+  - semantic-drift
+  - cascading-failures
+  - silent-failures
+  - agent-drift
+  - enterprise-ai
+  - simulation
 abstract: >-
-  Discrete-event simulator for studying how locally valid and 
-  semantically ambiguous AI outputs that propagate through 
-  interconnected systems can induce environment-level drift. 
-  Implements a four-system loan underwriting pipeline with 
-  feedback loops, discretization effects, and an ISCIL containment 
-  layer. Accompanies the paper "Propagation of Ambiguity-Bearing 
-  Outputs Across Interconnected Systems Environment."
+  Discrete-event simulator for studying how locally valid and
+  semantically ambiguous AI outputs propagate through
+  interconnected systems and induce environment-level drift.
+  Implements a four-system loan underwriting pipeline with
+  feedback loops, discretization effects, and an ISCIL containment
+  layer. Validates the theoretical framework from the paper
+  "Propagation of Ambiguity-Bearing Outputs Across Interconnected
+  Systems Environment" (Ayada, 2026). The simulator demonstrates
+  that a +0.1 percentage point approval rate shift, undetectable
+  by standard monitoring, produces +2.2% excess defaults. ISCIL
+  eliminates these with only 6.5% of timesteps under intervention.
 preferred-citation:
   type: article
   authors:
     - given-names: "Myriam"
       family-names: "Ayada"
+      orcid: "https://orcid.org/0009-0000-4516-6686"
   title: >-
     Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment
   year: 2026
+  doi: "10.5281/zenodo.18719966"
+  url: "https://www.techrxiv.org/"
