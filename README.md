@@ -1,15 +1,14 @@
 # ISE Simulator
-
+[![Paper](https://img.shields.io/badge/Paper-SSRN-blue.svg)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6383259)
 [![DOI](https://zenodo.org/badge/1160733820.svg)](https://doi.org/10.5281/zenodo.18719966)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Paper](https://img.shields.io/badge/Paper-TechRxiv-blue.svg)](https://www.techrxiv.org/)
 [![Website](https://img.shields.io/badge/Web-mind--xo.com-1F3935.svg)](https://mind-xo.com/research/)
 
 **Discrete-event simulator for studying Ambiguity-Bearing Outputs (ABOs) across Interconnected Systems Environment (ISE)**
 
 > **Author:** Myriam Ayada ([@Myr-Aya](https://github.com/Myr-Aya))
 > **Affiliation:** Independent Researcher
-> **Paper:** *Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment*
+> **Paper:** *Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment* https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6383259
 > **Additional Research Pages:** [Overview](https://mind-xo.com/research) |[ABO](https://mind-xo.com/research/ambiguity-bearing-outputs) | [ISE](https://mind-xo.com/research/interconnected-systems-environment) | [ISCIL](https://mind-xo.com/research/iscil-containment-architecture) | [Glossary](https://mind-xo.com/research/glossary)
 
 This simulator accompanies the paper *"Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment"*. It implements a four-system loan underwriting pipeline to validate the theoretical framework's predictions about how, under certain conditions, locally valid AI outputs can induce environment-level drift through discretization, feedback loops, and semantic ambiguity.
@@ -242,8 +241,9 @@ Ayada, M. (2026). *Propagation of Ambiguity-Bearing Outputs Across Interconnecte
   title     = {Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment},
   author    = {Ayada, Myriam},
   year      = {2026},
-  doi       = {10.5281/zenodo.18719966},
-  url       = {https://mind-xo.com/research}
+  doi       = {10.2139/ssrn.6383259  },
+  url       = {[https://mind-xo.com/research](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6383259
+)}
 }
 ```
 
