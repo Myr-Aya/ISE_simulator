@@ -234,20 +234,15 @@ Full simulation details are documented in the paper's Section 6 (results) and An
 
 If you use this simulator in your research, please cite:
 
-Ayada, M. (2026). *Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment.*  DOI: [10.5281/zenodo.18719966](https://doi.org/10.5281/zenodo.18719966)
-
-```bibtex
+bibtex
 @article{ayada2026abo,
-  title     = {Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment},
-  author    = {Ayada, Myriam},
-  year      = {2026},
-  doi       = {10.2139/ssrn.6383259  },
-  url       = {[https://mind-xo.com/research](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6383259
-)}
+  title   = {Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment},
+  author  = {Ayada, Myriam},
+  year    = {2026},
+  journal = {SSRN Electronic Journal},
+  doi     = {10.2139/ssrn.6383259},
+  url     = {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6383259}
 }
-```
-
----
 
 ## License
 
