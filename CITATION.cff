@@ -46,5 +46,7 @@ preferred-citation:
   title: >-
     Propagation of Ambiguity-Bearing Outputs Across Interconnected Systems Environment
   year: 2026
-  doi: "10.5281/zenodo.18719966"
-  url: "https://www.techrxiv.org/"
+  journal: {SSRN Electronic Journal},
+  doi: {10.2139/ssrn.6383259},
+  url: {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6383259}
+
